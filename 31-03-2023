@@ -1,0 +1,215 @@
+// class program of c++
+#include<iostream>
+using namespace std;
+
+class emp{
+	
+	public:
+	int id;
+	string name;
+	float salary;
+};
+
+int main()
+{
+	emp e1;
+	e1.id =101;
+	e1.name= "ekta";
+	e1.salary= 40000.00;
+	cout<<e1.id<<endl;
+	cout<<e1.name<<endl;
+	cout<<e1.salary<<endl;
+}
+
+// do while statement
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int ch;
+	cout<<"enter your number:";
+	cin>>ch;
+	do
+	{
+		cout<<endl<<"1. addition";
+		cout<<endl<<"2. substraction";
+		cout<<endl<<"3. multiply";
+		cout<<endl<<"enter your number";
+		
+	}
+	while(ch!=3);
+	cout<<endl<<"invalid number";
+	return 0;
+}
+
+// for loop statement
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i,n;
+	cout<<"enter any number:";
+	cin>>n;
+	for(i=0;i<=5;i++)
+	
+	{
+		cout<<endl<<"your number is :"<<i;
+	}
+}
+
+// if else statement
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num;
+	cout<<"enter any number:";
+	cin>>num;
+	
+	if(num<0)
+	cout<<"number is valid:";
+	
+	else
+	cout<<"number is invalid:";
+}
+
+// if . else if statement
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int marks;
+
+cout<<"enter your marks:";
+cin>>marks;
+
+if(marks > 90)
+cout<<"oustanding"<<endl;
+
+else if (marks > 80)
+cout<<"excellent";
+
+else if (marks > 70)
+cout<<"very good";
+
+else if (marks > 60)
+cout<<"good";
+	
+else if (marks > 50)
+cout<<"keep it up";	
+
+else
+cout<<"fail";
+}
+
+// if statement
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num;
+	
+    cout<<"enter any number:";
+    cin>>num;
+    
+    if(num<0)
+    num=num;
+    
+    cout<<"number is valid:";
+}
+
+#include<iostream>
+ using namespace std;
+ 
+ 	int main()
+ {
+ 	int a=0;
+ 	do
+ 	{
+	 
+ 	cout<<endl<<"welcome to tops";
+ 	a++;
+ 	
+ }
+ while(a<=20);
+ }
+ 
+ // c++ program for class and object define
+
+#include<iostream>
+using namespace std;
+
+class student{
+	
+	public: // access specificer public,private,protected by_dfault private
+	int id;
+	string name;
+	
+	void getdata() // member function or method
+	{
+		cout<<id<<"id is="<<name<<"name is="<<endl;
+	}
+};
+
+int main()
+{
+	student s1; //obeject define
+	s1.id=101;
+	s1.name="ekta";
+	cout<<endl<<s1.name;
+}
+
+// SWITCH CASE STATEMENT
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int num
+	cout<<"enter any number:";
+	cin>>num;
+	switch(num)
+	{
+		case 1: cout<<" A ";
+		break;
+		
+		case 1: cout<<" A ";
+		break;
+		
+		case 1: cout<<" A ";
+		break;
+		
+		default:
+		cout<<"invalid";case 1: cout<<" A ";
+		break;
+	}
+}
+
+// while loop statment
+#include<iostream>
+using namespace std;
+
+ int main()
+ {
+ 	int i,n;
+ 	cout<<"enter your number";
+ 	cin>>n;
+ 	
+ 	while(i<=5)
+ 	{
+ 		cout<<endl<<"your name is valid"<<i;
+ 		i++;
+	 }
+ }
+ 
