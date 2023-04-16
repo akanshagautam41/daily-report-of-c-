@@ -1,0 +1,210 @@
+// parameteriezd constuctor
+
+#include<iostream>
+using namespace std;
+
+class xyz{
+	private: int x,y;
+	
+	public:
+		
+		xyz(int x1, int y1) // parametriezd constructor
+		{
+			x=x1;
+			y=y1;
+		}
+		
+		 display_x1()
+		{
+			return x;
+		}
+		
+		display_y1()
+		{
+			return y;
+		}
+		
+};
+
+int main()
+{
+	xyz s1(4 , 6);
+	cout<<s1.display_x1();
+	cout<<s1.display_y1();
+}
+
+#include<iostream>
+using namespace std;
+
+class emp{
+	public: int num;
+		
+		emp() // default constructor
+		{
+			
+		}
+		
+};
+
+int main()
+
+{
+	emp e1;
+	cout<<"number is 100:";
+}
+
+#include<iostream>
+
+using namespace std;
+
+class student{
+	private:
+		int a,b;
+		
+		public:
+			student(int x, int y) // parameterized constructor
+			{
+				a=x;
+				b=y;
+			}
+			
+			student(student &ref) // copy constructor
+			{
+				a=ref.a;
+				b=ref.b;
+			}
+			setdata() // method
+			{
+				cout<<a<<" "<<b<<endl;
+			}
+};
+
+int main()
+{
+	student obj(4 , 5);
+	student obj1=obj;
+	obj.setdata();
+	obj1.setdata();
+}
+
+#include<iostream>
+using namespace std;
+
+class xyz{
+	 public:
+	 	
+	 	int id;
+	 	
+	xyz()
+	
+	{
+		cout<<"your id is : 100"<<endl;
+		
+	}
+};
+
+int main()
+{
+	xyz e1;
+}
+
+#include<iostream>
+
+using namespace std;
+int main()
+{
+	int a[3][3],b[3][3],i,j,c[3][3];
+	
+
+	for(i=0;i<3;j++)
+	{
+		for(j=0;j<3;j++)
+		cin>>a[i][j];
+	}
+	
+	
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		cin>>b[i][j];
+	
+	}
+	cout<<"\nEnter any value:";
+	for(i=0; i<3; i++)
+	{
+		for(j=0; j<3; j++)
+        c[i][j] = a[i][j]+b[i][j];
+	}
+	for(i=0;i<3;i++)
+{
+	for(j=0;j<3;j++)
+	
+	{
+			for(j=0; j<5 ;j++)
+		 cout<<c[i][j];
+		}
+}
+
+}
+ 
+	
+
+// add two matrix program
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a[5][5] ,b[5][5] ,i,j, sum[5][5];
+	int n;
+	
+	cout<<"enter any number:";
+	cin>>n;
+	for(i=0; i<5; i++)
+	{
+		for(j=0; j<5; j++)
+		cin>>a[i][j];
+	}
+	cout<<"enter any number:";
+	for(i=0; i<5; i++)
+	{
+		for(j=0; j<5; j++)
+		cin>>b[i][j];
+	}
+	cout<<"\nEnter Total number of addition:";
+	for(i=0; i<5; i++)
+	{
+		for(j=0; j<5; j++)
+        sum[i][j] = a[i][j]+b[i][j];
+	}
+	cout<<"addition matrix: ";
+	for(i=0; i<5; i++)
+	{
+		for(j=0; j<5 ;j++)
+		 cout<<sum[i][j]<<" ";
+        cout<<endl;
+	}
+	
+	
+	return 0;
+}
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int a,b,sum;
+	
+	cout<<"enter any number:";
+	cin>>a>>b;
+	
+	sum=a+b;
+	
+	cout<<a<<"+"<<b<<"="<<sum;
+	
+	return 0;
+	
+	
+}
