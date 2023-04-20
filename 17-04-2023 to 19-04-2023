@@ -1,0 +1,365 @@
+// function overloading
+
+#include<iostream>
+using namespace std;
+class shape{
+	public:
+		
+		void area(float r)  // area of circle
+		{
+			float res;
+			res= 3.14*r*r;
+			cout<<"area of circle is: "<<res<<endl;
+		}
+		
+			void area(int l ,int b)  // area of rectangle
+		{
+			int res;
+			res= l*b;
+			cout<<"area of rectangle is: "<<res<<endl;
+		}
+};
+
+main()
+
+{
+	shape s1;
+	s1.area(5.0);  // parameter indicate which method should call first
+	s1.area(4,8);
+}
+
+// hierarchial inheritance
+
+#include<iostream>
+using namespace std;
+
+class base{
+	
+	public:
+		
+		void getdata()
+		{
+			cout<<"A"<<endl;
+		}
+	
+};
+
+class A: public base{
+	
+	public:
+		
+		void setdata()
+		{
+			cout<<"B"<<endl;
+		}
+	
+};
+
+class B: public base{
+	
+	public:
+		
+		void display()
+		{
+			cout<<"c"<<endl;
+		}
+	
+	
+};
+
+main()
+{
+	A a;
+	a.getdata(); // class base
+	a.setdata(); // class A
+	
+	B b;
+	b.getdata(); // class base
+	b.display();  // class B
+}
+
+// hybrid inheritance
+
+#include<iostream>
+using namespace std;
+
+class A{
+	
+	public:
+		
+		void getdata()
+		{
+			cout<<"A"<<endl;
+		}
+	
+};	
+
+class B: public A{
+	
+	public:
+		
+		void setdata()
+		{
+			cout<<"B"<<endl;
+		}
+	
+	
+};
+
+class C: public B{
+	
+	public:
+		
+		void playdata()
+		{
+			cout<<"C"<<endl;
+		}
+	
+	
+};
+
+class D: public C{
+	
+	public:
+		
+		void display()
+		{
+			cout<<"D"<<endl;
+		}
+	
+	
+};
+
+main()
+{
+	D d;
+	d.getdata();
+	d.setdata();
+	d.playdata();
+	d.display();
+}
+
+// multilevel inhertiance------> onesuper super class , one super calss, one derived class
+
+#include<iostream>
+using namespace std;
+
+class emp{
+	
+	public:
+		
+		void getdata() // method
+		{
+			cout<<"=====A====="<<endl;
+		}
+	
+};
+
+class stu:public emp{
+	
+	public:
+		void setdata()
+		{
+			cout<<"=====B====="<<endl;
+		}
+	
+};
+
+class child: public stu{
+	
+	public:
+		
+		void display()
+		{
+			cout<<"=====child====="<<endl;
+		}
+	
+};
+
+main()
+{
+	child c;
+	c.getdata();
+	c.setdata();
+	c.display();
+}
+
+// multiple inhertiance------> two super class and or sub class
+
+#include<iostream>
+using namespace std;
+
+class faculty{
+	
+	public:
+		void setdata()
+		{
+			cout<<"A"<<endl;
+		}
+};
+
+class student{
+	
+	public:
+		void getdata()
+		{
+			cout<<"B"<<endl;
+		}
+};
+
+class child: public faculty,public student{
+	
+	public:
+		
+		display()
+		{
+			cout<<"child";
+		}
+};
+
+main()
+{
+	child c;
+	c.getdata();
+	c.setdata();
+	c.display();
+}
+
+// operator overloading ------>
+// in which we cannot do operator overloading
+// (.)-->dot,(.*)--->dot astrick (::)--->scope resoultion ,(? :)--->conditional
+
+#include<iostream>
+using namespace std;
+
+class complex {
+	
+	private: int a,b;
+	
+	public: 
+	
+	complex()
+	{
+		
+	}
+	
+	complex(int i, int j)
+	{
+		a=i;
+		b=j;
+		}
+		
+		complex operator + (complex const &ref)	
+		{
+			complex temp;
+			temp.a=a+ref.a;
+			temp.b=b+ref.b;
+			return temp;
+			
+		}
+		
+		void display()
+		{
+			cout << a << "+ i"<<b<<endl;
+		}
+};
+
+main()
+{
+	complex c1(2,1) , c2(2,3), c3;
+	c1.display();
+	c2.display();
+	c3=c1+c2;
+	c3.display();
+}
+
+// overriding ----> virtual keyword is use for hilding the method which we want to hide
+
+#include<iostream>
+
+using namespace std;
+
+ class base{
+ 	
+ 	public:
+ 		 
+ 		 virtual void print()
+ 		 {
+ 		 	cout<<"print base class \n ";
+ 		 	
+		  }
+		  
+		  void show()
+		  {
+		  	cout<<"show base class \n ";
+		  }
+ };
+ 
+ class derived : public base{
+ 	public:
+ 		
+ 		void print()
+ 		{
+ 			cout<< " print derived class \n";
+		 }
+		 
+		 void show()
+		 {
+		 	cout<<"show derived class \n";
+		 }
+ };
+ 
+ int main()
+ {
+ 	base *bptr;
+ 	derived d;
+ 	bptr = &d;
+ 	
+ 	// virtual function , binded at runtime
+ 	bptr->print();
+ 	
+ 	// non-virtual function , binded at compile time
+ 	bptr->show();
+ 	
+ 	return 0;
+ }
+ 
+ // single inheritance
+
+#include<iostream>
+using namespace std;
+
+class A{
+	
+	public:
+		int a=10;
+		
+		void setdata()
+		{
+			
+		}
+};
+
+class B : public A{
+	
+	public :
+		int b=20;
+		
+		/*B() // default constructure
+		{
+	}*/
+	
+	void display()
+	{
+		cout<<"sum of two value is :"<<a+b;
+	}
+		
+};
+
+main()
+{
+	// to create class object // classname objectname; 
+	B b;  // object of b
+	b.setdata(); // class of A
+	b.display();
+}
